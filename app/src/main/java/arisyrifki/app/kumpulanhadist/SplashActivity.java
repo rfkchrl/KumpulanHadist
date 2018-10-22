@@ -5,34 +5,37 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
 
 /**
  * Created by rfkchrl on 10/1/2018.
  */
 
 public class SplashActivity extends AppCompatActivity {
-    ImageView android;
+
+    private static final int TIGA_DETIK = 3000;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //menghilangkan action bar
-        //this.requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_splash);
+        countDown();
 
-        //mengabil id dari activity yg akan ditampil kan.
-        android = (ImageView) findViewById(R.id.splash);
+    }
+        private void countDown() {
+        Handler handler = new Handler();
 
-        //memulai splash
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+            Runnable menunggu = new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                finish();
+                gotoMain();
             }
-        }, 3000L); //3000L = 3 detik
-    }
-}
+        };
+        handler.postDelayed(menunggu, TIGA_DETIK);
+        }
+        private void gotoMain(){
+            Intent intentMain = new Intent(SplashActivity.this, MainActivity.class);
+            startActivity(intentMain);
+            finish();
+        }
+   }
+

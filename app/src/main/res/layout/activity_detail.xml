@@ -12,6 +12,7 @@
         android:orientation="vertical"
         android:gravity="center">
         <TextView
+            android:id="@+id/doa_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Doa Sebelum Makan"
@@ -19,6 +20,7 @@
             android:textStyle="bold"
             android:layout_margin="15dp"/>
         <TextView
+            android:id="@+id/doa_Surah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="الَّلهُمَّ بَارِكْ لَنَا فِيمَا رَزَقْتَنَا، وَقِنَا عَذَابَ النَّارِ"
@@ -26,6 +28,7 @@
             android:textStyle="normal"
             android:layout_margin="15dp"/>
         <TextView
+            android:id="@+id/doa_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="'Yaa Allah, berkatilah rezeki yang engkau berikan kepada kami, dan peliharalah kami dari siksa api neraka'"

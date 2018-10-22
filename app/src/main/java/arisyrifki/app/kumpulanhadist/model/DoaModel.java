@@ -5,32 +5,18 @@ package arisyrifki.app.kumpulanhadist.model;
  */
 
 public class DoaModel {
-    private int img;
     private String nama;
     private String arti;
     private String surah;
 
-    /*
-     *Constructor
-     * Menginisialisasikan Variable
-     */
-
-    public DoaModel(int img, String nama, String arti, String surah) {
-        this.img = img;
+    /* *Constructor * Menginisialisasikan Variable  */
+    public DoaModel(String nama, String arti, String surah) {
         this.nama = nama;
         this.arti = arti;
         this.surah = surah;
     }
 
-     /*
-     * Getter
-     * untuk mengambil isian dari constructor
-     */
-
-    public int getImg() {
-        return img;
-    }
-
+     /* *Getter *untuk mengambil isian dari constructo */
     public String getNama() {
         return nama;
     }
@@ -39,7 +25,5 @@ public class DoaModel {
         return arti;
     }
 
-    public String getSurah() {
-        return surah;
-    }
+    public String getSurah() { return surah; }
 }

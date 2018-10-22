@@ -18,11 +18,10 @@ import arisyrifki.app.kumpulanhadist.model.DoaModel;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    RecyclerView.Adapter adapter;
-    RecyclerView.LayoutManager layoutManager;
-    List<DoaModel> doa;
 
+    public List<DoaModel> doa = new ArrayList<>();
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,22 +29,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycle);
+        //casting recyclerview
+        recyclerView = (RecyclerView)findViewById(R.id.recycle);
 
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-
-        adapter = new DoaAdapter(this,doa);
-        recyclerView.setAdapter(adapter);
+        LinearLayoutManager linear = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linear);
 
         doaCollections();
+
+        DoaAdapter adapter = new DoaAdapter(doa);
+        recyclerView.setAdapter(adapter);
         }
 
     private void doaCollections(){
-        doa = new ArrayList<>();
 
-        doa.add(new DoaModel(0, "Masuk Masjid", "Artimasukmasjid", "cari google "));
-        doa.add(new DoaModel(0, "Masuk Masjid", "Artimasukmasjid", "cari google "));
-        doa.add(new DoaModel(0, "Masuk Masjid", "Artimasukmasjid", "cari google "));
+        doa.add(new DoaModel("Masuk Masjid", "Artimasukmasjid", "cari google "));
+        doa.add(new DoaModel("Masuk Masjid", "Artimasukmasjid", "cari google "));
+        doa.add(new DoaModel("Masuk Masjid", "Artimasukmasjid", "cari google "));
+        doa.add(new DoaModel("Masuk Masjid", "Artimasukmasjid", "cari google "));
+        doa.add(new DoaModel("Masuk Masjid", "Artimasukmasjid", "cari google "));
+        doa.add(new DoaModel("Masuk Masjid", "Artimasukmasjid", "cari google "));
+
     }
 }

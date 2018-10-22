@@ -43,12 +43,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void doaCollections(){
 
-        doa.add(new DoaModel("Masuk Masjid", "Artimasukmasjid", "cari google "));
-        doa.add(new DoaModel("Masuk Masjid", "Artimasukmasjid", "cari google "));
-        doa.add(new DoaModel("Masuk Masjid", "Artimasukmasjid", "cari google "));
-        doa.add(new DoaModel("Masuk Masjid", "Artimasukmasjid", "cari google "));
-        doa.add(new DoaModel("Masuk Masjid", "Artimasukmasjid", "cari google "));
-        doa.add(new DoaModel("Masuk Masjid", "Artimasukmasjid", "cari google "));
+        doa.add(new DoaModel("Agama", "Agama itu mudah", "الَدِّيْنُ يُسرٌ "));
+        doa.add(new DoaModel("Shalat", "Kunci surga adalah shalat", "مِفْتَاحُ الْجَنَّةِ الصَّلاَةُ "));
+        doa.add(new DoaModel("Kecurangan", "Siapa yang curang bukan golongan kami", "مَنْ غَشَّنا فَلَيْسَ مِنَّا "));
+        doa.add(new DoaModel("Salam", "Ucapan salam sebelum bicara", "الَسَّلامُ قَبْلَ الكَلاَمِ "));
+        doa.add(new DoaModel("Jujur", "Hendaknya kalian berlaku jujur", "علَيْكُمْ باِلصِّدْقِ "));
+
+        doa.add(new DoaModel("Amalan", "Setiap amalam sesuai dengan niatnya", "نمَا الأعْمَالُ باِلنِّيَةِإِ "));
+        doa.add(new DoaModel("Kebersihan", "Kebersihan sebagian dari iman", "الطُّهُورُ شَطْرُ الإِيمَانِ "));
+        doa.add(new DoaModel("Merampas", "Siapa merampas milik orang bukan golongan kami", "مَنِ انْتَهَبَ نُهْبَةً فَلَيْسَ مِنَّا"));
+        doa.add(new DoaModel("Surga", "SSurga berada dibawah telapak kaki ibu", "الْجَنَّةُ تَحْتَ أقْدامِ الأُمَّهَاتِ"));
+        doa.add(new DoaModel("Pemarah", "Jauhi sifat pemarah", "اِجْتَنِبُواالْغَضَبَ"));
+
 
     }
 }

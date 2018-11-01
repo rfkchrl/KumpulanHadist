@@ -4,7 +4,11 @@ package arisyrifki.app.kumpulanhadist.model;
  * Created by rfkchrl on 10/19/2018.
  */
 
+//Doa model sebagai blueprint, isi bisa melalui setter dan constructor
+
+
 public class DoaModel {
+    //Variable yang dideklarasikan
     private String nama;
     private String arti;
     private String surah;
@@ -17,6 +21,8 @@ public class DoaModel {
     }
 
      /* *Getter *untuk mengambil isian dari constructo */
+
+
     public String getNama() {
         return nama;
     }

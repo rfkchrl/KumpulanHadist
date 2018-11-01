@@ -4,25 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/header"
+    <FrameLayout
+        android:id="@+id/frm_detail"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@color/colortext">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kumpulan Hadist"
-            android:textColor="#fff"
-            android:layout_centerInParent="true"
-            android:textSize="30dp"/>
-
-    </RelativeLayout>
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:id="@+id/botton"
-        android:layout_below="@id/header"
+        android:layout_below="@id/frm_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">

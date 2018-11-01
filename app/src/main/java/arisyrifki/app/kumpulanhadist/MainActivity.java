@@ -2,6 +2,8 @@ package arisyrifki.app.kumpulanhadist;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,18 +12,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import arisyrifki.app.kumpulanhadist.adapter.DoaAdapter;
+import arisyrifki.app.kumpulanhadist.adapter.DoaListener;
+import arisyrifki.app.kumpulanhadist.fragment.DoaDetailFragment;
 import arisyrifki.app.kumpulanhadist.model.DoaModel;
 
 /**
  * Created by rfkchrl on 10/1/2018.
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements DoaListener{
 
 
     public List<DoaModel> doa = new ArrayList<>();
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,8 +41,31 @@ public class MainActivity extends AppCompatActivity {
         doaCollections();
 
         DoaAdapter adapter = new DoaAdapter(doa);
+        adapter.setListener(this);
         recyclerView.setAdapter(adapter);
-        }
+
+     }
+
+    private void replaceFrameDetail(DoaModel doa){
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+
+        DoaDetailFragment doafragment = new DoaDetailFragment();
+
+        Bundle kirimDoaBundle = new Bundle();
+        kirimDoaBundle.putString("nama_doa", doa.getNama());
+        kirimDoaBundle.putString("arti_doa", doa.getArti());
+        kirimDoaBundle.putString("surah_doa", doa.getSurah());
+
+        //dilempar ke doa fragment
+        doafragment.setArguments(kirimDoaBundle);
+
+
+        ft.replace(R.id.frm_detail, doafragment);
+        ft.commit();
+
+
+    }
 
     private void doaCollections(){
 
@@ -55,6 +81,13 @@ public class MainActivity extends AppCompatActivity {
         doa.add(new DoaModel("Surga", "SSurga berada dibawah telapak kaki ibu", "الْجَنَّةُ تَحْتَ أقْدامِ الأُمَّهَاتِ"));
         doa.add(new DoaModel("Pemarah", "Jauhi sifat pemarah", "اِجْتَنِبُواالْغَضَبَ"));
 
+
+
+    }
+
+    @Override
+    public void onDoaClick(DoaModel doaModel) {
+        replaceFrameDetail(doaModel);
 
     }
 }
